@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /api/
+Disallow: /auth/
+Disallow: /dashboard/
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://cultforge.com/sitemap.xml

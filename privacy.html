@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | CultForge</title>
+
+    <meta name="description"
+        content="CultForge is a custom, high-fidelity Minecraft launcher built for the community. Completely independent and entirely free forever, it delivers a premium, seamless experience without compromises." />
+    <meta name="keywords"
+        content="CultForge, communities, platform, tools, social systems, developer ecosystem, minecraft, mc, forge, steve, launcher, game launcher, minecraft launcher" />
+    <meta name="author" content="CultForge" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="theme-color" content="#0B0B10" />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CultForge" />
+    <meta property="og:description" content="Build modern communities and ecosystems." />
+    <meta property="og:url" content="https://www.cultforge.com" />
+    <meta property="og:image" content="https://www.cultforge.com/static/libs/generated/banner.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CultForge" />
+    <meta name="twitter:description" content="Build modern communities and ecosystems." />
+    <meta name="twitter:image" content="https://www.cultforge.com/static/libs/generated/banner.png" />
+    <link rel="canonical" href="https://cultforge.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "CultForge",
+            "url": "https://www.cultforge.com",
+            "logo": "https://www.cultforge.com/static/images/logo.png"
+        }
+    </script>
+    <link rel="icon" sizes="48x48" href="./static/ico/icon@48x48.ico">
+    <link rel="icon" sizes="32x32" href="./static/ico/icon@32x32.ico">
+    <link rel="icon" sizes="16x16" href="./static/ico/icon@16x16.ico">
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="./static/ico/icon@48x48.ico" type="image/x-icon">
+
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="./static/css/com.privacy.css" />
+
+</head>
+
+<body class="min-h-screen bg-obsidian-900 text-[#B8B6CC] flex flex-col relative">
+
+    <!-- Background Effects -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-obsidian-900 to-obsidian-800"></div>
+        <div class="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-neon-purple/10 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[60%] bg-neon-magenta/10 blur-[150px] rounded-full">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar"
+        class="fixed top-0 w-full z-50 transition-all duration-300 bg-obsidian-900/90 backdrop-blur-md border-b border-obsidian-700 py-4">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 cursor-pointer group">
+                <div
+                    class="w-10 h-10 rounded-xl bg-gradient-to-br from-neon-magenta to-neon-purple flex items-center justify-center shadow-[0_0_15px_rgba(255,43,214,0.4)] group-hover:rotate-12 transition-transform">
+                    <i class="ph-fill ph-game-controller text-white text-2xl"></i>
+                </div>
+                <span class="text-2xl font-black tracking-tight text-[#F2F3FF]">Cult<span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-magenta">Forge</span></span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-[#B8B6CC] hover:text-neon-glow font-medium transition-colors">Home</a>
+                <a href="#" class="text-[#B8B6CC] hover:text-neon-glow font-medium transition-colors">Documentation</a>
+                <a href="index.html#features"
+                    class="text-[#B8B6CC] hover:text-neon-glow font-medium transition-colors">Architecture</a>
+                <a href="https://discord.gg/bUBbhV9x" target="_blank"
+                    class="text-[#F2F3FF] font-medium hover:text-neon-magenta transition-colors flex items-center gap-2">
+                    <i class="ph ph-discord-logo text-lg"></i> Join Discord
+                </a>
+            </div>
+
+            <button id="mainMenuBtn" class="md:hidden text-[#F2F3FF] hover:text-neon-magenta focus:outline-none">
+                <i id="mainMenuIcon" class="ph ph-list text-3xl"></i>
+            </button>
+        </div>
+
+        <div id="mobileMenu"
+            class="hidden absolute top-full left-0 w-full bg-obsidian-800 border-b border-obsidian-700 flex flex-col py-4 px-6 gap-4 shadow-2xl">
+            <a href="index.html" class="text-[#B8B6CC] text-lg py-2 border-b border-obsidian-700">Home</a>
+            <a href="#" class="text-[#B8B6CC] text-lg py-2 border-b border-obsidian-700">Documentation</a>
+            <a href="index.html#features"
+                class="text-[#B8B6CC] text-lg py-2 border-b border-obsidian-700">Architecture</a>
+            <a href="https://discord.gg/bUBbhV9x" target="_blank" class="text-neon-magenta font-bold text-lg py-2">Join
+                Discord</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative z-10 flex-1 w-full max-w-4xl mx-auto px-6 pt-36 pb-24">
+
+        <div class="text-center mb-12">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-obsidian-700 border border-neon-purple/30 text-neon-glow text-sm font-semibold mb-6 shadow-[0_0_20px_rgba(122,44,255,0.1)]">
+                <i class="ph-fill ph-shield-check text-neon-magenta"></i>
+                Transparent & Secure
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black mb-4 text-[#F2F3FF]">Privacy Policy</h1>
+            <p class="text-[#B8B6CC] text-lg">Last Updated: <span class="text-neon-glow font-medium">May 2026</span></p>
+        </div>
+
+        <!-- Glassmorphic Content Card -->
+        <div
+            class="bg-obsidian-800/80 backdrop-blur-xl p-8 md:p-12 rounded-3xl border border-neon-purple/30 shadow-[0_20px_60px_rgba(122,44,255,0.1)]">
+
+            <div class="space-y-6 text-[#B8B6CC] leading-relaxed">
+                <p class="text-lg">
+                    At CultForge, we believe your data belongs to you. We are an open-source community dedicated to
+                    providing the best Minecraft launcher experience, and we are fundamentally opposed to unnecessary
+                    data collection, telemetry tracking, and selling user information.
+                </p>
+                <p class="text-lg">
+                    This Privacy Policy explains what small amounts of information we do collect, how it is used, and
+                    how third-party services interact with our launcher.
+                </p>
+
+                <h2
+                    class="text-2xl font-bold text-[#F2F3FF] mt-12 mb-6 border-b border-obsidian-700 pb-3 flex items-center gap-3">
+                    <i class="ph-bold ph-database text-neon-purple"></i> 1. Information We Collect
+                </h2>
+                <p>
+                    We have designed CultForge to collect the absolute minimum amount of data required to function.
+                </p>
+                <ul class="space-y-4 mt-4 mb-8">
+                    <li class="flex items-start gap-3">
+                        <i class="ph-fill ph-check-circle text-neon-magenta mt-1 shrink-0 text-xl"></i>
+                        <span><strong class="text-[#F2F3FF]">Authentication Tokens:</strong> To allow you to play
+                            Minecraft, our launcher communicates with Microsoft's Xbox Live authentication APIs. We
+                            store the resulting OAuth access tokens <em>locally on your machine</em>. <strong
+                                class="text-neon-glow">We never see, transmit, or store your Microsoft account
+                                password.</strong></span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="ph-fill ph-check-circle text-neon-magenta mt-1 shrink-0 text-xl"></i>
+                        <span><strong class="text-[#F2F3FF]">Diagnostic Logs (Opt-in):</strong> If the launcher crashes,
+                            you may be prompted to share a crash log with our development team. This log includes basic
+                            system information (OS version, Java version, allocated RAM) and the stack trace of the
+                            error. This is entirely optional and disabled by default.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="ph-fill ph-check-circle text-neon-magenta mt-1 shrink-0 text-xl"></i>
+                        <span><strong class="text-[#F2F3FF]">Website Analytics:</strong> When you visit
+                            <code>cultforge.com</code>, we use privacy-respecting, cookieless analytics to count page
+                            views and downloads. This data is anonymized and aggregated.</span>
+                    </li>
+                </ul>
+
+                <!-- Highlight Box -->
+                <div
+                    class="my-10 rounded-2xl bg-gradient-to-br from-obsidian-900 to-obsidian-800 border border-neon-magenta/40 p-6 md:p-8 relative overflow-hidden shadow-[0_0_30px_rgba(255,43,214,0.1)] group">
+                    <div class="absolute inset-0 bg-neon-magenta/5 group-hover:bg-neon-magenta/10 transition-colors">
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-5 relative z-10">
+                        <div class="text-neon-magenta shrink-0">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-neon-magenta/10 flex items-center justify-center border border-neon-magenta/30">
+                                <i class="ph-fill ph-shield-warning text-3xl animate-pulse"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-[#F2F3FF] mb-2 tracking-tight">Zero Telemetry Promise</h4>
+                            <p class="text-[#B8B6CC] text-sm md:text-base leading-relaxed">
+                                CultForge does not contain any background telemetry trackers. We do not track what
+                                modpacks you play, how long you play, or what servers you connect to. Your gaming habits
+                                are exclusively your own business.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2
+                    class="text-2xl font-bold text-[#F2F3FF] mt-12 mb-6 border-b border-obsidian-700 pb-3 flex items-center gap-3">
+                    <i class="ph-bold ph-plugs-connected text-neon-purple"></i> 2. Third-Party Services
+                </h2>
+                <p>
+                    To provide a seamless experience for downloading mods and logging into Minecraft, CultForge must
+                    communicate with several third-party APIs. By using these features, you are also subject to their
+                    respective privacy policies.
+                </p>
+                <ul class="space-y-4 mt-4 mb-8">
+                    <li class="flex items-start gap-3">
+                        <i class="ph-bold ph-microsoft-outlook-logo text-neon-purple mt-1 shrink-0 text-xl"></i>
+                        <span><strong class="text-[#F2F3FF]">Microsoft & Xbox Live:</strong> Used for account
+                            authentication to verify game ownership. (<a
+                                href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank"
+                                class="text-neon-magenta hover:text-neon-glow hover:underline transition-colors">Microsoft
+                                Privacy Statement</a>)</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="ph-bold ph-cube text-neon-purple mt-1 shrink-0 text-xl"></i>
+                        <span><strong class="text-[#F2F3FF]">Modrinth API:</strong> Used when browsing, downloading, or
+                            updating mods and modpacks from the Modrinth ecosystem. (<a
+                                href="https://modrinth.com/legal/privacy" target="_blank"
+                                class="text-neon-magenta hover:text-neon-glow hover:underline transition-colors">Modrinth
+                                Privacy Policy</a>)</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="ph-bold ph-fire text-neon-purple mt-1 shrink-0 text-xl"></i>
+                        <span><strong class="text-[#F2F3FF]">CurseForge API:</strong> Used when browsing or downloading
+                            content from the CurseForge ecosystem. (<a href="https://www.overwolf.com/legal/privacy"
+                                target="_blank"
+                                class="text-neon-magenta hover:text-neon-glow hover:underline transition-colors">Overwolf
+                                Privacy Policy</a>)</span>
+                    </li>
+                </ul>
+
+                <h2
+                    class="text-2xl font-bold text-[#F2F3FF] mt-12 mb-6 border-b border-obsidian-700 pb-3 flex items-center gap-3">
+                    <i class="ph-bold ph-chart-bar text-neon-purple"></i> 3. How We Use Information
+                </h2>
+                <p>
+                    Any information that is explicitly shared with us (such as crash reports or bug submissions on our
+                    GitHub/Discord) is used exclusively for the following purposes:
+                </p>
+                <ul class="list-disc list-inside space-y-2 mt-4 ml-2 mb-8 text-[#B8B6CC]">
+                    <li>Fixing bugs and improving the stability of the CultForge launcher.</li>
+                    <li>Providing technical support when requested by the user.</li>
+                    <li>Preventing malicious use of our automated build servers.</li>
+                </ul>
+
+                <h2
+                    class="text-2xl font-bold text-[#F2F3FF] mt-12 mb-6 border-b border-obsidian-700 pb-3 flex items-center gap-3">
+                    <i class="ph-bold ph-hard-drives text-neon-purple"></i> 4. Data Storage and Security
+                </h2>
+                <p class="mb-4">
+                    Because CultForge operates entirely locally on your machine, your data remains on your hard drive.
+                </p>
+                <p class="mb-8">
+                    Your Microsoft OAuth tokens and local instance configurations are stored in your operating system's
+                    standard application data directory (e.g., <code
+                        class="bg-obsidian-900 text-neon-glow px-2 py-1 rounded font-mono text-sm border border-obsidian-700">%APPDATA%/CultForge</code>
+                    on Windows). We highly recommend keeping your local machine secure, as anyone with physical or
+                    remote access to your file system can access these tokens.
+                </p>
+
+                <h2
+                    class="text-2xl font-bold text-[#F2F3FF] mt-12 mb-6 border-b border-obsidian-700 pb-3 flex items-center gap-3">
+                    <i class="ph-bold ph-code text-neon-purple"></i> 5. Open Source Transparency
+                </h2>
+                <p class="mb-4">
+                    Don't just take our word for it. CultForge is 100% open-source software licensed under the hybrid
+                    licensing model.
+                </p>
+                <p class="mb-8">
+                    Anyone is free to inspect, audit, and compile the source code from our <a href="#"
+                        class="text-neon-magenta hover:text-neon-glow hover:underline transition-colors font-semibold">GitHub
+                        Repository</a> to verify exactly what the launcher is doing behind the scenes. We welcome
+                    security researchers and community members to review our codebase.
+                </p>
+
+                <h2
+                    class="text-2xl font-bold text-[#F2F3FF] mt-12 mb-6 border-b border-obsidian-700 pb-3 flex items-center gap-3">
+                    <i class="ph-bold ph-clock-counter-clockwise text-neon-purple"></i> 6. Changes to This Policy
+                </h2>
+                <p class="mb-8">
+                    We may update this Privacy Policy from time to time to reflect changes in our software or legal
+                    requirements. When we do, we will revise the "Last Updated" date at the top of this page. If we make
+                    significant material changes, we will notify the community via our Discord server and update notes
+                    within the launcher.
+                </p>
+
+                <h2
+                    class="text-2xl font-bold text-[#F2F3FF] mt-12 mb-6 border-b border-obsidian-700 pb-3 flex items-center gap-3">
+                    <i class="ph-bold ph-envelope-simple text-neon-purple"></i> 7. Contact Us
+                </h2>
+                <p>
+                    If you have any questions or concerns about this Privacy Policy or our data practices, please reach
+                    out to us:
+                </p>
+                <ul class="space-y-3 mt-4 mb-8">
+                    <li class="flex items-center gap-3">
+                        <i class="ph-fill ph-discord-logo text-neon-purple text-xl"></i>
+                        <span><strong class="text-[#F2F3FF]">Discord:</strong> Open a ticket in the
+                            <code>#support</code> channel.</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="ph-fill ph-github-logo text-neon-purple text-xl"></i>
+                        <span><strong class="text-[#F2F3FF]">GitHub:</strong> Open an issue for technical security
+                            inquiries.</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="ph-fill ph-envelope-simple text-neon-purple text-xl"></i>
+                        <span><strong class="text-[#F2F3FF]">Email:</strong> <a href="mailto:privacy@cultforge.com"
+                                class="text-neon-magenta hover:text-neon-glow transition-colors">privacy@cultforge.com</a></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (Matched with index.html) -->
+    <footer class="bg-obsidian-900 border-t border-obsidian-700 pt-12 pb-8 mt-auto z-10 relative">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2">
+                <i class="ph-fill ph-game-controller text-neon-magenta text-xl"></i>
+                <span class="text-lg font-black text-[#F2F3FF]">Cult<span class="text-neon-purple">Forge</span></span>
+            </div>
+
+            <p id="copyright-year" class="text-[#B8B6CC] text-sm text-center md:text-left">
+                © 2026 CultForge Contributors. Not affiliated with Mojang or Microsoft.
+            </p>
+
+            <div class="flex gap-4 text-sm">
+                <a href="#" class="text-[#B8B6CC] hover:text-[#F2F3FF] transition-colors">GitHub</a>
+                <a href="https://discord.gg/bUBbhV9x" target="_blank"
+                    class="text-[#B8B6CC] hover:text-[#F2F3FF] transition-colors">Discord</a>
+                <a href="privacy.html" class="text-neon-glow font-medium">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mainMenuBtn = document.getElementById('mainMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mainMenuIcon = document.getElementById('mainMenuIcon');
+
+        mainMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                mainMenuIcon.classList.replace('ph-x', 'ph-list');
+            } else {
+                mainMenuIcon.classList.replace('ph-list', 'ph-x');
+            }
+        });
+    </script>
+</body>
+
+</html>

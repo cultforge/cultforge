@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <link rel="shortcut icon" href="./static/ico/icon@48x48.ico" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CultForge | Minecraft Launcher</title>
+    <meta name="description"
+        content="CultForge is a custom, high-fidelity Minecraft launcher built for the community. Completely independent and entirely free forever, it delivers a premium, seamless experience without compromises." />
+    <meta name="keywords"
+        content="CultForge, communities, platform, tools, social systems, developer ecosystem, minecraft, mc, forge, steve, launcher, game launcher, minecraft launcher" />
+    <meta name="author" content="CultForge" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="theme-color" content="#0B0B10" />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CultForge" />
+    <meta property="og:description" content="Build modern communities and ecosystems." />
+    <meta property="og:url" content="https://www.cultforge.com" />
+    <meta property="og:image" content="https://www.cultforge.com/static/libs/generated/banner.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CultForge" />
+    <meta name="twitter:description" content="Build modern communities and ecosystems." />
+    <meta name="twitter:image" content="https://www.cultforge.com/static/libs/generated/banner.png" />
+    <link rel="canonical" href="https://cultforge.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "CultForge",
+            "url": "https://www.cultforge.com",
+            "logo": "https://www.cultforge.com/static/images/logo.png"
+        }
+    </script>
+    <link rel="icon" sizes="48x48" href="./static/ico/icon@48x48.ico">
+    <link rel="icon" sizes="32x32" href="./static/ico/icon@32x32.ico">
+    <link rel="icon" sizes="16x16" href="./static/ico/icon@16x16.ico">
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="./static/ico/icon@48x48.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="./static/css/global.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/com.index.css">
+    <link rel="stylesheet" href="./static/libs/css/github-markdown-dark.min.css">
+    <link rel="stylesheet" href="./static/libs/css/global.css">
+
+    <script src="./static/libs/js/marked.min.js"></script>
+    <script src="./static/libs/js/purify.min.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+
+</head>
+
+<body class="min-h-screen bg-obsidian-900 text-white font-sans overflow-x-hidden">
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-obsidian-900 to-obsidian-800"></div>
+        <div class="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-neon-purple/10 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[60%] bg-neon-magenta/10 blur-[150px] rounded-full"></div>
+    </div>
+
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-6">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <div class="flex items-center gap-3 cursor-pointer group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-neon-magenta to-neon-purple flex items-center justify-center shadow-[0_0_15px_rgba(255,43,214,0.4)] group-hover:rotate-12 transition-transform">
+                    <i class="ph-fill ph-game-controller text-white text-2xl"></i>
+                </div>
+                <span class="text-2xl font-black tracking-tight">Cult<span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-magenta">Forge</span></span>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#features" class="text-[#B8B6CC] hover:text-neon-glow font-medium transition-colors">Architecture</a>
+                <a href="#editions" class="text-[#B8B6CC] hover:text-neon-glow font-medium transition-colors">Editions</a>
+                <a href="https://discord.gg/bUBbhV9x" target="_blank" class="text-[#F2F3FF] font-medium hover:text-neon-magenta transition-colors flex items-center gap-2">
+                    <i class="ph ph-globe text-lg"></i> Join Discord
+                </a>
+            </div>
+
+            <button id="menuBtn" class="md:hidden text-[#F2F3FF] hover:text-neon-magenta">
+                <i id="menuIcon" class="ph ph-list text-3xl"></i>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-obsidian-800 border-b border-obsidian-700 flex flex-col py-4 px-6 gap-4 shadow-2xl">
+            <a href="#features" class="mobile-link text-[#F2F3FF] text-lg py-2 border-b border-obsidian-700">Architecture</a>
+            <a href="#editions" class="mobile-link text-[#F2F3FF] text-lg py-2 border-b border-obsidian-700">Editions</a>
+            <a href="#download" class="mobile-link text-neon-magenta font-bold text-lg py-2">Download Now</a>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-32 pb-20">
+        <section class="max-w-7xl mx-auto px-6 lg:min-h-[80vh] flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div class="flex-1 text-center lg:text-left pt-10 lg:pt-0">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-obsidian-700 border border-neon-purple/30 text-neon-glow text-sm font-semibold mb-6 shadow-[0_0_20px_rgba(122,44,255,0.1)]">
+                    <i class="ph-fill ph-rocket-launch text-neon-magenta"></i>
+                    Rust Client & FastAPI Backend Now Live
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6">
+                    The Ultimate <br />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-magenta via-neon-purple to-neon-glow drop-shadow-lg">
+                        Independent
+                    </span>
+                    <br />
+                    Minecraft Launcher.
+                </h1>
+
+                <p class="text-lg md:text-xl text-[#B8B6CC] mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    A hybrid open-source ecosystem built on systems-level architecture. Experience raw performance, smart environment detection, and deep community integration—completely free, forever.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                    <button class="download-btn relative group overflow-hidden rounded-xl font-bold text-[#F2F3FF] transition-all hover:scale-105 active:scale-95 w-full sm:w-auto text-lg text-left cursor-pointer">
+                        <div class="absolute inset-0 bg-gradient-to-r from-neon-magenta to-neon-purple opacity-100 group-hover:opacity-80 transition-opacity"></div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-neon-magenta to-neon-purple blur-lg opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="relative flex flex-col justify-center gap-1 px-8 py-3 bg-obsidian-700/20 hover:bg-transparent transition-colors">
+                            <div class="flex items-center gap-2">
+                                <i class="ph-bold ph-download-simple text-xl"></i>
+                                <span class="btn-text">Download Community Edition</span>
+                            </div>
+                            <span class="text-[10px] font-normal opacity-80 pl-7 uppercase tracking-wider">Windows • Includes Social Features</span>
+                        </div>
+                    </button>
+
+                    <div class="flex gap-4">
+                        <button disabled class="p-4 cursor-not-allowed rounded-xl bg-obsidian-700 border border-obsidian-800 text-obsidian-800 group" title="macOS Client in Development">
+                            <i class="ph-fill ph-apple-logo text-2xl"></i>
+                        </button>
+                        <button disabled class="p-4 cursor-not-allowed rounded-xl bg-obsidian-700 border border-obsidian-800 text-obsidian-800 group" title="Linux Client in Development">
+                            <i class="ph-bold ph-linux-logo text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="download-error-msg" class="hidden mt-4 text-sm text-red-400 font-medium">Unable to connect to cdn.cultforge.com</div>
+
+                <p class="mt-6 text-sm text-[#B8B6CC]/70 flex items-center justify-center lg:justify-start gap-2">
+                    <i class="ph-fill ph-shield-check"></i> EULA Compliant • Never stores your Microsoft credentials.
+                </p>
+            </div>
+
+            <div class="flex-1 w-full max-w-lg lg:max-w-none relative mt-16 lg:mt-0 perspective-1000">
+                <div class="absolute -top-10 -left-10 w-16 h-16 animate-float rounded-xl bg-gradient-to-br from-neon-magenta to-neon-purple shadow-[0_0_30px_rgba(122,44,255,0.4)] opacity-60 backdrop-blur-sm z-0" style="animation-delay: 0s">
+                    <div class="absolute inset-1 bg-obsidian-700/80 rounded-lg"></div>
+                </div>
+                <div class="absolute bottom-20 -right-5 w-20 h-20 animate-float rounded-xl bg-gradient-to-br from-neon-purple to-neon-glow shadow-[0_0_30px_rgba(122,44,255,0.4)] opacity-60 backdrop-blur-sm z-0" style="animation-delay: -1.5s">
+                    <div class="absolute inset-1 bg-obsidian-700/80 rounded-lg"></div>
+                </div>
+
+                <div class="mockup-card relative z-10 w-full aspect-[4/3] rounded-2xl border border-neon-purple/30 bg-obsidian-800/90 backdrop-blur-xl shadow-[0_20px_60px_rgba(122,44,255,0.3)] overflow-hidden group">
+                    <div class="h-10 bg-obsidian-900 flex items-center px-4 gap-2 border-b border-obsidian-700">
+                        <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                        <div class="mx-auto text-xs font-semibold text-[#B8B6CC]">
+                            CultForge Launcher (Rust Client)
+                        </div>
+                    </div>
+
+                    <div class="p-6 flex flex-col h-[calc(100%-40px)] relative">
+                        <div class="flex justify-between items-center mb-6 relative z-10">
+                            <div class="text-xl font-bold">My Modpacks</div>
+                            <div class="flex items-center gap-3">
+                                <div class="flex items-center gap-2 bg-obsidian-900 px-3 py-1.5 rounded border border-obsidian-700">
+                                    <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                                    <span class="text-[10px] text-gray-400">api.cultforge.com</span>
+                                </div>
+                                <button class="bg-neon-purple text-white text-xs px-3 py-1.5 rounded-md hover:bg-neon-magenta transition-colors">
+                                    + New Instance
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4 relative z-10 flex-1">
+                            <div class="bg-obsidian-700 rounded-lg p-3 border border-neon-purple/20 group-hover:border-neon-magenta/50 transition-colors flex flex-col justify-between">
+                                <div>
+                                    <div class="w-full h-20 bg-obsidian-900 rounded-md mb-3 flex items-center justify-center relative overflow-hidden">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-green-500/20 to-blue-500/20"></div>
+                                        <i class="ph-fill ph-game-controller text-[#B8B6CC] text-3xl"></i>
+                                    </div>
+                                    <div class="font-semibold text-sm">RLCraft Survival</div>
+                                    <div class="text-xs text-[#B8B6CC] mt-1">1.12.2 • Forge</div>
+                                </div>
+                                <button class="w-full mt-3 bg-obsidian-800 hover:bg-neon-purple/20 text-xs py-1.5 rounded text-center transition-colors border border-obsidian-700">
+                                    Play Offline (Detected)
+                                </button>
+                            </div>
+
+                            <div class="bg-obsidian-700 rounded-lg p-3 border border-neon-purple/20 flex flex-col justify-between">
+                                <div>
+                                    <div class="w-full h-20 bg-obsidian-900 rounded-md mb-3 flex items-center justify-center relative overflow-hidden">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20"></div>
+                                        <i class="ph-fill ph-game-controller text-[#B8B6CC] text-3xl"></i>
+                                    </div>
+                                    <div class="font-semibold text-sm">All The Mods 9</div>
+                                    <div class="text-xs text-[#B8B6CC] mt-1">1.20.1 • NeoForge</div>
+                                </div>
+                                <button class="w-full mt-3 bg-gradient-to-r from-neon-magenta to-neon-purple text-xs py-1.5 rounded text-center text-white shadow-[0_0_10px_rgba(122,44,255,0.4)]">
+                                    Syncing via CDN...
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="border-y border-obsidian-700 bg-obsidian-800/50 backdrop-blur-sm relative z-10 mt-12 mb-24">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 divide-x divide-obsidian-700">
+                <div class="flex flex-col items-center justify-center p-6 text-center">
+                    <h4 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-neon-magenta to-neon-glow mb-2">Rust</h4>
+                    <p class="text-[#B8B6CC] font-medium tracking-wider uppercase text-xs">Core Client Architecture</p>
+                </div>
+                <div class="flex flex-col items-center justify-center p-6 text-center">
+                    <h4 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-neon-magenta to-neon-glow mb-2">Python</h4>
+                    <p class="text-[#B8B6CC] font-medium tracking-wider uppercase text-xs">FastAPI Infrastructure</p>
+                </div>
+                <div class="flex flex-col items-center justify-center p-6 text-center">
+                    <h4 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-neon-magenta to-neon-glow mb-2">4</h4>
+                    <p class="text-[#B8B6CC] font-medium tracking-wider uppercase text-xs">Dedicated Microservices</p>
+                </div>
+                <div class="flex flex-col items-center justify-center p-6 text-center">
+                    <h4 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-neon-magenta to-neon-glow mb-2">&lt; 2s</h4>
+                    <p class="text-[#B8B6CC] font-medium tracking-wider uppercase text-xs">Local Auth Bypass</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="max-w-7xl mx-auto px-6 mb-32 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-black mb-4">
+                    Engineered for <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-magenta">Excellence.</span>
+                </h2>
+                <p class="text-[#B8B6CC] max-w-2xl mx-auto text-lg">
+                    CultForge completely overhauls the launcher experience. Moving away from bloated web-wrappers, our bifurcated architecture guarantees safety, speed, and reliability.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="group relative p-1 rounded-2xl bg-gradient-to-b from-obsidian-700 to-obsidian-800 hover:from-neon-purple/50 hover:to-neon-magenta/50 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-r from-neon-magenta to-neon-purple opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 rounded-2xl"></div>
+                    <div class="relative h-full bg-obsidian-700 p-8 rounded-xl flex flex-col items-start z-10">
+                        <div class="p-3 rounded-lg bg-obsidian-800 border border-neon-purple/20 text-neon-magenta mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="ph-bold ph-cpu text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#F2F3FF] mb-3">Rust-Powered Client</h3>
+                        <p class="text-[#B8B6CC] leading-relaxed text-sm">
+                            The desktop application is built purely on Rust. Enjoy systems-level performance, memory safety, and a highly polished, instantly responsive user interface.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group relative p-1 rounded-2xl bg-gradient-to-b from-obsidian-700 to-obsidian-800 hover:from-neon-purple/50 hover:to-neon-magenta/50 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-r from-neon-magenta to-neon-purple opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 rounded-2xl"></div>
+                    <div class="relative h-full bg-obsidian-700 p-8 rounded-xl flex flex-col items-start z-10">
+                        <div class="p-3 rounded-lg bg-obsidian-800 border border-neon-purple/20 text-neon-magenta mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="ph-bold ph-radar text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#F2F3FF] mb-3">Smart Environment Detection</h3>
+                        <p class="text-[#B8B6CC] leading-relaxed text-sm">
+                            Offline-first design. If CultForge detects a localized, ready-to-play Minecraft environment on your machine, it intelligently bypasses unnecessary Mojang API calls.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group relative p-1 rounded-2xl bg-gradient-to-b from-obsidian-700 to-obsidian-800 hover:from-neon-purple/50 hover:to-neon-magenta/50 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-r from-neon-magenta to-neon-purple opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 rounded-2xl"></div>
+                    <div class="relative h-full bg-obsidian-700 p-8 rounded-xl flex flex-col items-start z-10">
+                        <div class="p-3 rounded-lg bg-obsidian-800 border border-neon-purple/20 text-neon-magenta mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="ph-bold ph-shield-check text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#F2F3FF] mb-3">Two-Tier Authentication</h3>
+                        <p class="text-[#B8B6CC] leading-relaxed text-sm">
+                            We separate social identity from game assets. Use Google OAuth for your CultForge community presence, and link your Xbox account exclusively to pull Microsoft assets safely.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="group relative p-1 rounded-2xl bg-gradient-to-b from-obsidian-700 to-obsidian-800 hover:from-neon-purple/50 hover:to-neon-magenta/50 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-r from-neon-magenta to-neon-purple opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 rounded-2xl"></div>
+                    <div class="relative h-full bg-obsidian-700 p-8 rounded-xl flex flex-col items-start z-10">
+                        <div class="p-3 rounded-lg bg-obsidian-800 border border-neon-purple/20 text-neon-magenta mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="ph-bold ph-hard-drives text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#F2F3FF] mb-3">FastAPI Infrastructure</h3>
+                        <p class="text-[#B8B6CC] leading-relaxed text-sm">
+                            Our backend relies on Python FastAPI deployed across four dedicated endpoints (auth, api, cdn, invite) ensuring max uptime and rapid content delivery.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="group relative p-1 rounded-2xl bg-gradient-to-b from-obsidian-700 to-obsidian-800 hover:from-neon-purple/50 hover:to-neon-magenta/50 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-r from-neon-magenta to-neon-purple opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 rounded-2xl"></div>
+                    <div class="relative h-full bg-obsidian-700 p-8 rounded-xl flex flex-col items-start z-10">
+                        <div class="p-3 rounded-lg bg-obsidian-800 border border-neon-purple/20 text-neon-magenta mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="ph-bold ph-puzzle-piece text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#F2F3FF] mb-3">Modrinth Integrated</h3>
+                        <p class="text-[#B8B6CC] leading-relaxed text-sm">
+                            Seamless, native integration with Modrinth's API. Search, install, and update modpacks, standalone mods, resource packs, and shaders directly from the UI.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="group relative p-1 rounded-2xl bg-gradient-to-b from-obsidian-700 to-obsidian-800 hover:from-neon-purple/50 hover:to-neon-magenta/50 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-r from-neon-magenta to-neon-purple opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 rounded-2xl"></div>
+                    <div class="relative h-full bg-obsidian-700 p-8 rounded-xl flex flex-col items-start z-10">
+                        <div class="p-3 rounded-lg bg-obsidian-800 border border-neon-purple/20 text-neon-magenta mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="ph-bold ph-code text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#F2F3FF] mb-3">Hybrid Open-Source</h3>
+                        <p class="text-[#B8B6CC] leading-relaxed text-sm">
+                            We operate on trust. The majority of the application logic is fully open to the community, while our critical encryption logic remains securely closed-source.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="editions" class="max-w-5xl mx-auto px-6 mb-20 relative z-10">
+            <div class="relative rounded-3xl overflow-hidden bg-obsidian-800 border border-neon-purple/30 p-10 md:p-16 text-center shadow-[0_0_50px_rgba(122,44,255,0.15)]">
+                <div class="absolute inset-0 bg-gradient-to-br from-neon-magenta/10 to-neon-purple/10 z-0"></div>
+
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-4xl font-black mb-6 text-[#F2F3FF]">
+                        Choose Your Experience.
+                    </h2>
+                    <p class="text-lg text-[#B8B6CC] mb-10 max-w-2xl mx-auto">
+                        We distribute CultForge in two specialized versions to fit exactly how you prefer to play.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-6 text-left mb-10">
+                        <div class="bg-obsidian-900/50 p-6 rounded-xl border border-obsidian-700">
+                            <h3 class="text-xl font-bold text-neon-glow mb-2">CultForge User Edition</h3>
+                            <p class="text-sm text-[#B8B6CC] mb-4">A streamlined, lightweight client focused purely on game management. Stripped of extra social integrations for maximum focus and speed.</p>
+                            <button class="text-neon-purple hover:text-white text-sm font-semibold flex items-center gap-1 transition-colors group">
+                                Download Lite Client <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                        </div>
+                        <div class="bg-obsidian-900/80 p-6 rounded-xl border border-neon-purple/50 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 bg-neon-purple text-xs font-bold px-3 py-1 rounded-bl-lg">RECOMMENDED</div>
+                            <h3 class="text-xl font-bold text-neon-magenta mb-2">Community Edition</h3>
+                            <p class="text-sm text-[#B8B6CC] mb-4">The complete experience. Combines the base launcher with integrated, Discord-style community features, messaging, and seamless friend sync.</p>
+                            <button class="text-neon-magenta hover:text-white text-sm font-semibold flex items-center gap-1 transition-colors group">
+                                Download Full Client <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <a href="https://discord.gg/bUBbhV9x" target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-[#F2F3FF] bg-obsidian-700 border border-neon-purple/30 hover:border-neon-magenta/50 hover:bg-obsidian-800 transition-all hover:scale-105 active:scale-95 shadow-[0_0_15px_rgba(122,44,255,0.15)]">
+                        <i class="ph-bold ph-globe text-xl text-neon-glow"></i> Have questions? Join the Discord
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-obsidian-900 border-t border-obsidian-700 pt-16 pb-8 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div class="md:col-span-1">
+                <div class="flex items-center gap-2 mb-4">
+                    <i class="ph-fill ph-game-controller text-neon-magenta text-3xl"></i>
+                    <span class="text-xl font-black">Cult<span class="text-neon-purple">Forge</span></span>
+                </div>
+                <p class="text-[#B8B6CC] text-sm leading-relaxed mb-6">
+                    A high-fidelity, community-driven Minecraft launcher. Independent of Mojang/Microsoft, and free forever.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-[#F2F3FF] mb-4">Downloads</h4>
+                <ul class="space-y-2 text-[#B8B6CC] text-sm">
+                    <li><a href="#" class="hover:text-neon-magenta transition-colors">Community Edition (Win)</a></li>
+                    <li><a href="#" class="hover:text-neon-magenta transition-colors">User Edition (Win)</a></li>
+                    <li><a href="#" class="hover:text-neon-magenta transition-colors">Source Code (GitHub)</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-[#F2F3FF] mb-4">Infrastructure</h4>
+                <ul class="space-y-2 text-[#B8B6CC] text-sm">
+                    <li><span class="text-green-400 font-mono text-xs mr-2">●</span><a href="#" class="hover:text-neon-purple transition-colors">auth.cultforge.com</a></li>
+                    <li><span class="text-green-400 font-mono text-xs mr-2">●</span><a href="#" class="hover:text-neon-purple transition-colors">api.cultforge.com</a></li>
+                    <li><span class="text-green-400 font-mono text-xs mr-2">●</span><a href="#" class="hover:text-neon-purple transition-colors">cdn.cultforge.com</a></li>
+                    <li><span class="text-green-400 font-mono text-xs mr-2">●</span><a href="#" class="hover:text-neon-purple transition-colors">invite.cultforge.com</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-[#F2F3FF] mb-4">Community</h4>
+                <ul class="space-y-2 text-[#B8B6CC] text-sm">
+                    <li><a href="https://discord.gg/bUBbhV9x" target="_blank" class="hover:text-neon-glow transition-colors">Discord Server</a></li>
+                    <li><a href="#" class="hover:text-neon-glow transition-colors">Documentation</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-obsidian-700 flex flex-col md:flex-row items-center justify-between text-[#B8B6CC] text-xs">
+            <p id="copyright-year">
+                © 2026 CultForge Contributors. Not affiliated with Mojang or Microsoft. EULA Compliant.
+            </p>
+            <div class="flex gap-4 mt-4 md:mt-0">
+                <a href="./privacy.html" class="hover:text-[#F2F3FF] transition-colors">Privacy Policy</a>
+                <a href="./terms.html" class="hover:text-[#F2F3FF] transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="eulaModal" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-obsidian-900/80 backdrop-blur-md px-4 py-10 opacity-0 transition-opacity duration-300">
+        <div class="bg-obsidian-800 border border-neon-purple/30 rounded-2xl w-full max-w-3xl flex flex-col max-h-full shadow-[0_0_50px_rgba(122,44,255,0.2)] transform scale-95 transition-transform duration-300" id="eulaModalContent">
+
+            <!-- Modal Header -->
+            <div class="p-6 border-b border-obsidian-700 flex justify-between items-center shrink-0">
+                <div>
+                    <h3 class="text-2xl font-bold text-[#F2F3FF]">End User License Agreements</h3>
+                    <p class="text-sm text-[#B8B6CC] mt-1">Please read and accept to proceed with the download.</p>
+                </div>
+                <button id="closeModalBtn" class="text-[#B8B6CC] hover:text-neon-magenta transition-colors p-2 bg-obsidian-700 rounded-lg">
+                    <i class="ph-bold ph-x text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Dynamic Markdown Content Area -->
+            <div class="p-6 overflow-y-auto flex-1 text-left relative prose prose-invert max-w-none" id="markdownContent">
+                <div class="flex flex-col items-center justify-center py-20 text-neon-purple">
+                    <i class="ph-bold ph-spinner animate-spin text-5xl mb-4"></i>
+                    <span class="text-sm font-semibold tracking-wider uppercase text-neon-glow">Fetching from GitHub...</span>
+                </div>
+            </div>
+
+            <!-- Action Area / Checkboxes -->
+            <div class="p-6 border-t border-obsidian-700 bg-obsidian-700/30 rounded-b-2xl shrink-0">
+                <div class="flex flex-col gap-4 mb-6">
+                    <label class="flex items-center gap-3 text-[#B8B6CC] cursor-pointer group">
+                        <input type="checkbox" class="legal-checkbox appearance-none w-5 h-5 rounded border border-neon-purple/50 bg-obsidian-900 checked:bg-neon-magenta checked:border-neon-magenta focus:ring-1 focus:ring-neon-purple transition-colors relative">
+                        <span class="group-hover:text-[#F2F3FF] transition-colors select-none text-sm">I have read and agree to the <span class="text-neon-glow font-semibold">License Agreement</span></span>
+                    </label>
+                    <label class="flex items-center gap-3 text-[#B8B6CC] cursor-pointer group">
+                        <input type="checkbox" class="legal-checkbox appearance-none w-5 h-5 rounded border border-neon-purple/50 bg-obsidian-900 checked:bg-neon-magenta checked:border-neon-magenta focus:ring-1 focus:ring-neon-purple transition-colors relative">
+                        <span class="group-hover:text-[#F2F3FF] transition-colors select-none text-sm">I have read and agree to the <span class="text-neon-glow font-semibold">Privacy Policy</span></span>
+                    </label>
+                    <label class="flex items-center gap-3 text-[#B8B6CC] cursor-pointer group">
+                        <input type="checkbox" class="legal-checkbox appearance-none w-5 h-5 rounded border border-neon-purple/50 bg-obsidian-900 checked:bg-neon-magenta checked:border-neon-magenta focus:ring-1 focus:ring-neon-purple transition-colors relative">
+                        <span class="group-hover:text-[#F2F3FF] transition-colors select-none text-sm">I have read and agree to the <span class="text-neon-glow font-semibold">Terms & Conditions</span></span>
+                    </label>
+                </div>
+
+                <button id="confirmDownloadBtn" disabled class="w-full py-4 rounded-xl font-bold text-[#B8B6CC] bg-obsidian-700 border border-obsidian-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all relative overflow-hidden group">
+                    <div class="btn-bg-overlay absolute inset-0 bg-gradient-to-r from-neon-magenta to-neon-purple opacity-0 transition-opacity"></div>
+                    <span class="cursor-pointer relative z-10 flex items-center justify-center gap-2" id="confirmBtnText">
+                        <i class="ph-bold ph-lock-key text-xl" id="confirmBtnIcon"></i> Accept & Download
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script>
+        document.getElementById("copyright-year").textContent =
+            `© ${new Date().getFullYear()} CultForge Contributors. Not affiliated with Mojang or Microsoft. EULA Compliant.`;
+
+        const navbar = document.getElementById("navbar");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add("bg-obsidian-900/90", "backdrop-blur-md", "border-b", "border-obsidian-700", "shadow-lg", "py-4");
+                navbar.classList.remove("bg-transparent", "py-6");
+            } else {
+                navbar.classList.remove("bg-obsidian-900/90", "backdrop-blur-md", "border-b", "border-obsidian-700", "shadow-lg", "py-4");
+                navbar.classList.add("bg-transparent", "py-6");
+            }
+        });
+
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const menuIcon = document.getElementById("menuIcon");
+        const mobileLinks = document.querySelectorAll(".mobile-link");
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle("hidden");
+            if (mobileMenu.classList.contains("hidden")) {
+                menuIcon.classList.replace("ph-x", "ph-list");
+            } else {
+                menuIcon.classList.replace("ph-list", "ph-x");
+            }
+        }
+
+        menuBtn.addEventListener("click", toggleMenu);
+        mobileLinks.forEach((link) => link.addEventListener("click", toggleMenu));
+
+        const downloadBtns = document.querySelectorAll(".download-btn");
+        const errorMsg = document.getElementById("download-error-msg");
+
+        downloadBtns.forEach((btn) => {
+            btn.addEventListener("click", function () {
+                if (this.disabled) return;
+
+                const btnTextElement = this.querySelector(".btn-text");
+                const originalText = btnTextElement.innerText;
+                const iconElement = this.querySelector("i");
+                const originalIconClass = iconElement.className;
+
+                this.disabled = true;
+                btnTextElement.innerText = "Connecting to CDN...";
+                iconElement.className = "ph-bold ph-spinner animate-spin text-xl";
+
+                if(errorMsg) errorMsg.classList.add("hidden");
+
+                setTimeout(() => {
+                    this.disabled = false;
+                    btnTextElement.innerText = originalText;
+                    iconElement.className = originalIconClass;
+
+                    if(errorMsg) {
+                        errorMsg.classList.remove("hidden");
+                        setTimeout(() => errorMsg.classList.add("hidden"), 5000);
+                    }
+                    console.log("Download failed: Cannot connect to cdn.cultforge.com in local environment.");
+                }, 1500);
+            });
+        });
+    </script> -->
+</body>
+    <script src="./static/js/com.index.js"></script>
+</html>

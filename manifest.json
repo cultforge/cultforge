@@ -1,0 +1,17 @@
+{
+    "name": "CultForge",
+    "short_name": "CultForge",
+    "description": "Modern digital ecosystems.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0B0B10",
+    "theme_color": "#0B0B10",
+
+    "icons": [
+        {
+            "src": "/static/ico/icon@32x32.ico",
+            "sizes": "32x32",
+            "type": "image/x-icon"
+        }
+    ]
+}
